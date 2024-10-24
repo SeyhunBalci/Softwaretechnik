@@ -3,13 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Media3D;
+using System.Windows.Navigation;
 
 namespace PatientMonitor
 {
     class ECG
     {
-        public double amplitude = 0.0;
-        public double frequency = 0;
+        // Variablen 
+        private double amplitude = 0.0;
+        private double frequency = 0;
+
+        //Probities 
+        public double Amplitude
+        {
+            get { return amplitude; }
+            set
+            {
+                if (value < 10)
+                    amplitude = value;
+            }
+        }
+
+        public double Ftrequency { get => frequency; set => frequency = value; }
+
+
+
+            
 
         public ECG(double amplitude, double frequency)
         {
